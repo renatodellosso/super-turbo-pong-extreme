@@ -8,6 +8,8 @@ TitleAnimation::TitleAnimation() {
   timePassed = 0;
   duration = 5;
   prevIndex = 0;
+
+  SKIP_ON_INPUT_CONSTRUCTOR
 }
 
 void TitleAnimation::_bind_methods() {
@@ -18,6 +20,8 @@ void TitleAnimation::_bind_methods() {
   ClassDB::bind_method(D_METHOD("setAudioPlayer", "audioPlayer"), &TitleAnimation::setAudioPlayer);
   ClassDB::bind_method(D_METHOD("getAudioPlayer"), &TitleAnimation::getAudioPlayer);
   ADD_PROPERTY(PropertyInfo(Variant::OBJECT, "audioPlayer", PROPERTY_HINT_NODE_TYPE, "AudioStreamPlayer2D"), "setAudioPlayer", "getAudioPlayer");
+
+  SKIP_ON_INPUT_BIND(TitleAnimation)
 }
 
 void TitleAnimation::setDuration(const double duration) {
@@ -56,4 +60,12 @@ void TitleAnimation::_process(double delta) {
   }
 
   prevIndex = index;
+}
+
+SKIP_ON_INPUT_TRIGGER(TitleAnimation)
+
+void TitleAnimation::skip() {
+  set_text(fullText);
+  timePassed = duration;
+  prevIndex = fullText.split(" ").size();
 }

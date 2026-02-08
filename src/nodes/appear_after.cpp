@@ -7,6 +7,8 @@ using namespace godot;
 AppearAfter::AppearAfter() {
   timePassed = 0;
   duration = 5;
+
+  SKIP_ON_INPUT_CONSTRUCTOR
 }
 
 void AppearAfter::_bind_methods() {
@@ -17,6 +19,8 @@ void AppearAfter::_bind_methods() {
   ClassDB::bind_method(D_METHOD("setAudioPlayer", "audioPlayer"), &AppearAfter::setAudioPlayer);
   ClassDB::bind_method(D_METHOD("getAudioPlayer"), &AppearAfter::getAudioPlayer);
   ADD_PROPERTY(PropertyInfo(Variant::OBJECT, "audioPlayer", PROPERTY_HINT_NODE_TYPE, "AudioStreamPlayer2D"), "setAudioPlayer", "getAudioPlayer");
+
+  SKIP_ON_INPUT_BIND(AppearAfter)
 }
 
 void AppearAfter::setDuration(const double duration) {
@@ -51,4 +55,11 @@ void AppearAfter::_process(double delta) {
   }
 
   timePassed = newTime;
+}
+
+SKIP_ON_INPUT_TRIGGER(AppearAfter)
+
+void AppearAfter::skip() {
+  set_visible(true);
+  timePassed = duration;
 }

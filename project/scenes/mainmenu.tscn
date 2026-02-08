@@ -18,6 +18,10 @@ font_color = Color(1, 0, 0, 1)
 
 [node name="Shader" parent="." unique_id=1532595502 instance=ExtResource("2_natt5")]
 z_index = 1
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = 540.0
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=248750363]
 

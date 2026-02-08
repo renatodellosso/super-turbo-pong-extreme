@@ -2,11 +2,14 @@
 
 #include <godot_cpp/classes/label.hpp>
 #include <godot_cpp/classes/audio_stream_player2d.hpp>
+#include "../skip_on_input.h"
 
 using namespace godot;
 
 class TitleAnimation : public Label {
 	GDCLASS(TitleAnimation, Label)
+
+SKIP_ON_INPUT_H
 
 public:
 	TitleAnimation();

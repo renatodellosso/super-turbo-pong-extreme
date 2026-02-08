@@ -2,11 +2,14 @@
 
 #include <godot_cpp/classes/control.hpp>
 #include <godot_cpp/classes/audio_stream_player2d.hpp>
+#include "../skip_on_input.h"
 
 using namespace godot;
 
 class AppearAfter : public Control {
 	GDCLASS(AppearAfter, Control)
+
+SKIP_ON_INPUT_H
 
 public:
 	AppearAfter();
