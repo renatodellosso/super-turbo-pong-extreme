@@ -12,6 +12,6 @@ void StylizedButton::_process(double delta) {
   DONT_RUN_IN_EDITOR()
 
   if (is_hovered()) {
-    set_text(vformat("[ %s ]", originalText));
+    set_text(vformat("> %s", originalText));
   } else set_text(originalText);
 }

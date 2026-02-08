@@ -32,13 +32,13 @@ fullText = "SUPER TURBO PONG"
 duration = 2.5
 audioPlayer = NodePath("../../TitleAudioPlayer")
 layout_mode = 2
-text = "SUPER TURBO PONG"
 label_settings = SubResource("LabelSettings_natt5")
 horizontal_alignment = 1
 
 [node name="AppearAfter" type="AppearAfter" parent="." unique_id=900944939 node_paths=PackedStringArray("audioPlayer")]
 duration = 3.5
 audioPlayer = NodePath("../SubTitleAudioPlayer")
+visible = false
 offset_right = 40.0
 offset_bottom = 40.0
 
@@ -61,7 +61,8 @@ stream = ExtResource("4_3vvtq")
 volume_db = 15.0
 
 [node name="Buttons" type="AppearAfter" parent="." unique_id=1750135340]
-duration = 3.7
+duration = 4.5
+visible = false
 offset_right = 40.0
 offset_bottom = 40.0
 
