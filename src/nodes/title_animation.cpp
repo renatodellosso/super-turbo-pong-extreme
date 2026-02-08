@@ -11,10 +11,6 @@ TitleAnimation::TitleAnimation() {
 }
 
 void TitleAnimation::_bind_methods() {
-  ClassDB::bind_method(D_METHOD("setFullText", "fullText"), &TitleAnimation::setFullText);
-  ClassDB::bind_method(D_METHOD("getFullText"), &TitleAnimation::getFullText);
-  ADD_PROPERTY(PropertyInfo(Variant::STRING, "fullText"), "setFullText", "getFullText");
-
   ClassDB::bind_method(D_METHOD("setDuration", "duration"), &TitleAnimation::setDuration);
   ClassDB::bind_method(D_METHOD("getDuration"), &TitleAnimation::getDuration);
   ADD_PROPERTY(PropertyInfo(Variant::FLOAT, "duration", PROPERTY_HINT_RANGE, "0,20,0.1"), "setDuration", "getDuration");
@@ -22,14 +18,6 @@ void TitleAnimation::_bind_methods() {
   ClassDB::bind_method(D_METHOD("setAudioPlayer", "audioPlayer"), &TitleAnimation::setAudioPlayer);
   ClassDB::bind_method(D_METHOD("getAudioPlayer"), &TitleAnimation::getAudioPlayer);
   ADD_PROPERTY(PropertyInfo(Variant::OBJECT, "audioPlayer", PROPERTY_HINT_NODE_TYPE, "AudioStreamPlayer2D"), "setAudioPlayer", "getAudioPlayer");
-}
-
-void TitleAnimation::setFullText(const String fullText) {
-  this->fullText = fullText;
-}
-
-String TitleAnimation::getFullText() const {
-  return fullText;
 }
 
 void TitleAnimation::setDuration(const double duration) {
@@ -48,6 +36,7 @@ AudioStreamPlayer2D* TitleAnimation::getAudioPlayer() const {
 }
 
 void TitleAnimation::_ready() {
+  fullText = get_text();
   set_text("");
 }
 

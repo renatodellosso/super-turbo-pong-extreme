@@ -28,17 +28,16 @@ offset_right = 575.0
 offset_bottom = -160.0
 
 [node name="Title" type="TitleAnimation" parent="Centerer" unique_id=830548302 node_paths=PackedStringArray("audioPlayer")]
-fullText = "SUPER TURBO PONG"
 duration = 2.5
 audioPlayer = NodePath("../../TitleAudioPlayer")
 layout_mode = 2
+text = "SUPER TURBO PONG"
 label_settings = SubResource("LabelSettings_natt5")
 horizontal_alignment = 1
 
 [node name="AppearAfter" type="AppearAfter" parent="." unique_id=900944939 node_paths=PackedStringArray("audioPlayer")]
 duration = 3.5
 audioPlayer = NodePath("../SubTitleAudioPlayer")
-visible = false
 offset_right = 40.0
 offset_bottom = 40.0
 
@@ -62,16 +61,23 @@ volume_db = 15.0
 
 [node name="Buttons" type="AppearAfter" parent="." unique_id=1750135340]
 duration = 4.5
-visible = false
 offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Buttons" unique_id=1518979276]
 layout_mode = 0
-offset_left = -25.0
-offset_right = 25.0
-offset_bottom = 40.0
+offset_left = -40.0
+offset_right = 40.0
+offset_bottom = 82.0
+theme_override_constants/separation = 16
 alignment = 1
+
+[node name="Play" type="StylizedButton" parent="Buttons/VBoxContainer" unique_id=1527586316]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_5mbse")
+theme_override_font_sizes/font_size = 24
+text = "Play
+"
 
 [node name="Exit" type="StylizedButton" parent="Buttons/VBoxContainer" unique_id=538125296]
 layout_mode = 2

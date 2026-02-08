@@ -12,9 +12,6 @@ public:
 	TitleAnimation();
 	~TitleAnimation() override = default;
 
-  void setFullText(const String fullText);
-  String getFullText() const;
-
   void setDuration(const double duration);
   double getDuration() const;
 
