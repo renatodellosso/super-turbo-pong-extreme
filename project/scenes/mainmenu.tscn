@@ -2,6 +2,8 @@
 
 [ext_resource type="FontFile" path="res://fonts/connection_ii/ConnectionII.tres" id="1_5mbse"]
 [ext_resource type="PackedScene" uid="uid://dqwmk5c8l4pcn" path="res://scenes/shader.tscn" id="2_natt5"]
+[ext_resource type="AudioStream" uid="uid://6kcrtqq3s83p" path="res://sfx/pistol.wav" id="3_r3g3c"]
+[ext_resource type="AudioStream" uid="uid://dyhpbpdmx1gwx" path="res://sfx/shotgun.wav" id="4_3vvtq"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_natt5"]
 font = ExtResource("1_5mbse")
@@ -14,6 +16,9 @@ font_color = Color(1, 0, 0, 1)
 
 [node name="Node2D" type="Node2D" unique_id=45818990]
 
+[node name="Shader" parent="." unique_id=1532595502 instance=ExtResource("2_natt5")]
+z_index = 1
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=248750363]
 
 [node name="Centerer" type="CenterContainer" parent="." unique_id=709360842]
@@ -22,20 +27,35 @@ offset_top = -200.0
 offset_right = 575.0
 offset_bottom = -160.0
 
-[node name="Title" type="Label" parent="Centerer" unique_id=1105614281]
+[node name="Title" type="TitleAnimation" parent="Centerer" unique_id=830548302 node_paths=PackedStringArray("audioPlayer")]
+fullText = "SUPER TURBO PONG"
+duration = 2.5
+audioPlayer = NodePath("../../TitleAudioPlayer")
 layout_mode = 2
 text = "SUPER TURBO PONG"
 label_settings = SubResource("LabelSettings_natt5")
 horizontal_alignment = 1
 
-[node name="Extreme" type="Label" parent="." unique_id=624806075]
-offset_left = 146.00002
-offset_top = -111.99999
-offset_right = 364.0
-offset_bottom = -78.99999
+[node name="AppearAfter" type="AppearAfter" parent="." unique_id=900944939 node_paths=PackedStringArray("audioPlayer")]
+duration = 3.5
+audioPlayer = NodePath("../SubTitleAudioPlayer")
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Subtitle" type="Label" parent="AppearAfter" unique_id=624806075]
+layout_mode = 0
+offset_left = 138.0
+offset_top = -118.0
+offset_right = 356.0
+offset_bottom = -85.0
 rotation = -0.43633232
 text = "X-TREME!!!"
 label_settings = SubResource("LabelSettings_5mbse")
 horizontal_alignment = 1
 
-[node name="Shader" parent="." unique_id=1532595502 instance=ExtResource("2_natt5")]
+[node name="TitleAudioPlayer" type="AudioStreamPlayer2D" parent="." unique_id=810316744]
+stream = ExtResource("3_r3g3c")
+
+[node name="SubTitleAudioPlayer" type="AudioStreamPlayer2D" parent="." unique_id=197788773]
+stream = ExtResource("4_3vvtq")
+volume_db = 15.0
