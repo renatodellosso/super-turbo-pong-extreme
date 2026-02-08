@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://dnf1tla3dye25"]
+
+[ext_resource type="FontFile" path="res://fonts/connection_ii/ConnectionII.tres" id="1_5mbse"]
+[ext_resource type="PackedScene" uid="uid://dqwmk5c8l4pcn" path="res://scenes/shader.tscn" id="2_natt5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_natt5"]
+font = ExtResource("1_5mbse")
+font_size = 52
+
+[sub_resource type="LabelSettings" id="LabelSettings_5mbse"]
+font = ExtResource("1_5mbse")
+font_size = 32
+font_color = Color(1, 0, 0, 1)
+
+[node name="Node2D" type="Node2D" unique_id=45818990]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=248750363]
+
+[node name="Centerer" type="CenterContainer" parent="." unique_id=709360842]
+offset_left = -575.0
+offset_top = -200.0
+offset_right = 575.0
+offset_bottom = -160.0
+
+[node name="Title" type="Label" parent="Centerer" unique_id=1105614281]
+layout_mode = 2
+text = "SUPER TURBO PONG"
+label_settings = SubResource("LabelSettings_natt5")
+horizontal_alignment = 1
+
+[node name="Extreme" type="Label" parent="." unique_id=624806075]
+offset_left = 146.00002
+offset_top = -111.99999
+offset_right = 364.0
+offset_bottom = -78.99999
+rotation = -0.43633232
+text = "X-TREME!!!"
+label_settings = SubResource("LabelSettings_5mbse")
+horizontal_alignment = 1
+
+[node name="Shader" parent="." unique_id=1532595502 instance=ExtResource("2_natt5")]

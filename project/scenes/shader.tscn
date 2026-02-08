@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dqwmk5c8l4pcn"]
+
+[ext_resource type="Material" uid="uid://bwso30fkgghas" path="res://crt.tres" id="1_w76l2"]
+
+[node name="Shader" type="ColorRect" unique_id=1532595502]
+material = ExtResource("1_w76l2")
+offset_left = -575.0
+offset_top = -325.0
+offset_right = 575.0
+offset_bottom = 325.0
