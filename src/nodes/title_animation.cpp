@@ -1,5 +1,6 @@
 #include "title_animation.h"
 #include <algorithm>
+#include "utils.h"
 
 using namespace godot;
 
@@ -51,6 +52,8 @@ void TitleAnimation::_ready() {
 }
 
 void TitleAnimation::_process(double delta) {
+  DONT_RUN_IN_EDITOR()
+
   timePassed += delta;
 
   PackedStringArray words = fullText.split(" ");

@@ -7,6 +7,7 @@
 
 #include "nodes/title_animation.h"
 #include "nodes/appear_after.h"
+#include "nodes/stylized_button.h"
 
 using namespace godot;
 
@@ -17,7 +18,8 @@ void initialize_gdextension_types(ModuleInitializationLevel p_level)
 	}
 	
 	GDREGISTER_CLASS(TitleAnimation);
-	GDREGISTER_CLASS(AppearAfter)
+	GDREGISTER_CLASS(AppearAfter);
+	GDREGISTER_CLASS(StylizedButton);
 }
 
 void uninitialize_gdextension_types(ModuleInitializationLevel p_level) {

@@ -1,4 +1,5 @@
 #include "appear_after.h"
+#include "utils.h"
 #include <algorithm>
 
 using namespace godot;
@@ -38,6 +39,8 @@ void AppearAfter::_ready() {
 }
 
 void AppearAfter::_process(double delta) {
+  DONT_RUN_IN_EDITOR()
+
   double newTime = timePassed + delta;
 
   if (timePassed < duration && newTime > duration) {
