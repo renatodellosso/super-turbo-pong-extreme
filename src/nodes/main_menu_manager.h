@@ -6,6 +6,7 @@ class MainMenuManager : public Node2D {
   GDCLASS(MainMenuManager, Node2D)
 
 public:
+  void play();
   void exitGame();
 
 protected:

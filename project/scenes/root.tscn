@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dugskjo1jqiuc"]
+
+[ext_resource type="PackedScene" uid="uid://dnf1tla3dye25" path="res://scenes/mainmenu.tscn" id="1_j5px3"]
+
+[node name="Root" type="SceneManager" unique_id=121341991 node_paths=PackedStringArray("currentScene")]
+currentScene = NodePath("MainMenu")
+
+[node name="MainMenu" parent="." unique_id=1529258028 instance=ExtResource("1_j5px3")]

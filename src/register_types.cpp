@@ -9,6 +9,7 @@
 #include "nodes/appear_after.h"
 #include "nodes/stylized_button.h"
 #include "nodes/main_menu_manager.h"
+#include "nodes/scene_manager.h"
 
 using namespace godot;
 
@@ -22,6 +23,7 @@ void initialize_gdextension_types(ModuleInitializationLevel p_level)
 	GDREGISTER_CLASS(AppearAfter);
 	GDREGISTER_CLASS(StylizedButton);
 	GDREGISTER_CLASS(MainMenuManager);
+	GDREGISTER_CLASS(SceneManager);
 }
 
 void uninitialize_gdextension_types(ModuleInitializationLevel p_level) {

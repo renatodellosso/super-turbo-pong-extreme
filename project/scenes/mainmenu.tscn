@@ -14,7 +14,7 @@ font = ExtResource("1_5mbse")
 font_size = 32
 font_color = Color(1, 0, 0, 1)
 
-[node name="Node2D" type="MainMenuManager" unique_id=1529258028]
+[node name="MainMenu" type="MainMenuManager" unique_id=1529258028]
 
 [node name="Shader" parent="." unique_id=1532595502 instance=ExtResource("2_natt5")]
 z_index = 1
