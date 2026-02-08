@@ -19,6 +19,9 @@ project/bin/windows/*
 !project/bin/*.gdextension
 .sconsign*.dblite
 
+*.dylib
+*.uid
+
 # Ignore custom.py
 custom.py
 
