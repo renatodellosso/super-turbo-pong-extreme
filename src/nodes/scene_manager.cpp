@@ -31,8 +31,11 @@ Node2D* SceneManager::getCurrentScene() {
 Node2D* SceneManager::changeScene(String newSceneId) {
   Object* newSceneObj = availableScenes.get(newSceneId, nullptr);
   if (!newSceneObj) {
-    print_error("Invalid scene ID: %s", newSceneId);
+    print_error("Invalid scene ID: ", newSceneId);
+    return nullptr;
   }
+
+  print_line("Setting scene to ", newSceneId);
 
   Node2D* newScene = static_cast<Node2D*>(newSceneObj);
   auto old = currentScene;

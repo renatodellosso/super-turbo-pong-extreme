@@ -82,4 +82,5 @@ theme_override_fonts/font = ExtResource("1_5mbse")
 theme_override_font_sizes/font_size = 24
 text = "Exit"
 
+[connection signal="pressed" from="Buttons/VBoxContainer/Play" to="." method="play"]
 [connection signal="pressed" from="Buttons/VBoxContainer/Exit" to="." method="exitGame"]

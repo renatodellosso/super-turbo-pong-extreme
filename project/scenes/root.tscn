@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://dugskjo1jqiuc"]
 
 [ext_resource type="PackedScene" uid="uid://dnf1tla3dye25" path="res://scenes/mainmenu.tscn" id="1_j5px3"]
+[ext_resource type="PackedScene" uid="uid://q3pbuc3qe3wa" path="res://scenes/backstory.tscn" id="2_lrqlo"]
 [ext_resource type="PackedScene" uid="uid://dqwmk5c8l4pcn" path="res://scenes/shader.tscn" id="2_twpsu"]
 
 [node name="Root" type="SceneManager" unique_id=121341991 node_paths=PackedStringArray("currentScene")]
 availableScenes = {
+"backstory": ExtResource("2_lrqlo"),
 "mainMenu": ExtResource("1_j5px3")
 }
 currentScene = NodePath("MainMenu")

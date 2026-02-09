@@ -7,10 +7,17 @@
   return;
 
 #define CHANGE_SCENE(sceneId) \
-  if (get_parent_class_static() != StringName("SceneManager")) { \
-    print_error("Parent is not a SceneManager!"); \
+  print_line("Attempting to change scene to ", sceneId); \
+  Node* parent = get_parent(); \
+  if (!parent) { \
+    print_error("Parent is not a SceneManager because it is null!"); \
     return; \
   } \
 \
-  SceneManager* parent = static_cast<SceneManager*>(get_parent()); \
-  parent->changeScene(SceneIds.BACKSTORY);
+  if (parent->get_class() != StringName("SceneManager")) { \
+    print_error("Parent is not a SceneManager! It is a: %s", parent->get_class()); \
+    return; \
+  } \
+\
+  SceneManager* sceneManager = static_cast<SceneManager*>(parent); \
+  sceneManager->changeScene(SceneIds.BACKSTORY);
